@@ -31,12 +31,14 @@ class App extends Component {
     }
   }
 
-  formSubmitHandler = data => {
+  formSubmitHandler = (name, number) => {
     const contact = {
       id: nanoid(),
-      name: data.name,
-      number: data.number,
+      name: name,
+      number: number,
     };
+
+    console.log(contact);
 
     let contacts = this.state.contacts;
     let arrayName = contacts.map(contact => contact.name);
